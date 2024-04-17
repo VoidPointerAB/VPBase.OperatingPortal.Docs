@@ -1,0 +1,6 @@
+# @OperatingPortal.NetCore.WebExampleApi_HostAddress = http://localhost:5127
+
+# PUT {{OperatingPortal.NetCore.WebExampleApi_HostAddress}}/LogMessage/
+# Accept: application/json
+
+# ###
