@@ -1,6 +1,6 @@
-# VPBase.OperatingPortal.Docs
- Public documentation and test code for OperatingPortal module
+# Integrate with the Operating Portal through logging and heartbeats
+Below is information on how connecting an client application to submit log data and heart beatsd to the portal.
 
-## Integrate with the portal
-Use the links below to get started with integration with the portal
-* [Logging and Heartbeat](getting-started/integrate/logging-and-heartbeat/readme.md)
+## Logging
+
+## Hearbeats
