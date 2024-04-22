@@ -52,6 +52,20 @@ The code for this can be found in the public git repo:
 
 Here you will find the code for the rest log appender itself, which is used to communicate with operations.
 
+#### Initializing / Start-up
+
+At start-up, you only need to inform the client (the rest appender for logging) as its settings and then add log4net as logging (see image below).
+So it's extremely easy to get started.
+
+![Apply Setting and Log4net](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/logging-and-heartbeat/apply_settings_and_log4net.png)
+
+Then also what settings the log4net appender has, this through log4net.config. 
+
+![log4net.config](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/logging-and-heartbeat/log4net_config.png)
+
+But it should be able to be set programatically.
+Here you can see the assembly path to the appender client itself.
+
 ## Logging
 
 ## Hearbeats
