@@ -17,7 +17,7 @@ Then the job is very easy for you.
 ### Example .NET Core Web Example with Api
 You can check out our example below (the code exists in this git repo).
 
-[Example .NET Core Web Example with Api](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/tree/master/example-code/client-and-api/OperatingPortal.NetCore.WebExampleApi)
+[Full Example .NET Core Web with Operations Api](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/tree/master/example-code/client-and-api/OperatingPortal.NetCore.WebExampleApi)
 
 This example is a .NET Core sample api app that logs itself using its own rest-api, using the SAME contract as Operations and api-methods.
 The advantage is that you can test logging in and receiving the result in the same ex-app, and then test the entire flow without needing of two applications.
@@ -48,7 +48,7 @@ This is to get clean C# classes that avoid dynamic objects + code for communicat
 VBase.Client is an assembly that contains the actual rest-appender in log4net etc.
 The code for this can be found in the public git repo:
 
-[VPBase.Client](https://github.com/VoidPointerAB/VPBase.Client)
+[VPBase.Client - Public Git Repo](https://github.com/VoidPointerAB/VPBase.Client)
 
 Here you will find the code for the rest log appender itself, which is used to communicate with operations.
 
