@@ -14,7 +14,7 @@ If you don't find any sample code or similar below, you can create your own rest
 ## Is your application written in .NET?
 Then the job is very easy for you. 
 
-### Example .NET Core Web Example with Api
+### Full Example in .NET Core Web with Operations Api
 You can check out our example below (the code exists in this git repo).
 
 [Full Example .NET Core Web with Operations Api](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/tree/master/example-code/client-and-api/OperatingPortal.NetCore.WebExampleApi)
@@ -141,6 +141,81 @@ using (logger.BeginScope(dictionary))
 
 ```
 
-## Logging
+## Logging Json Contract
 
-## Hearbeats
+Below is the actual contract for the logging object in json
+
+```json
+{
+  "applicationName": "string",
+  "additionalInformation": "string",
+  "applicationId": "string",
+  "tenantIds": [
+    "string"
+  ],
+  "versionVPBase": 0,
+  "applicationType": 0,
+  "friendlyAppName": "string",
+  "level": "string",
+  "loggerName": "string",
+  "message": "string",
+  "exceptionString": "string",
+  "exceptionSource": "string",
+  "exceptionNumber": 0,
+  "customerMessage": "string",
+  "secretVPMonitorPassword": "string",
+  "logMessageDate": "2024-04-22T12:07:09.547Z",
+  "user": {
+    "userId": "string",
+    "userName": "string"
+  },
+  "entity": {
+    "entityId": "string",
+    "entityValueName": "string",
+    "entityType": 0,
+    "entityTypeName": "string"
+  },
+  "entity2": {
+    "entityId": "string",
+    "entityValueName": "string",
+    "entityType": 0,
+    "entityTypeName": "string"
+  },
+  "url": {
+    "rawUrl": "string",
+    "absoluteUri": "string"
+  },
+  "keyValues": [
+    {
+      "key": "string",
+      "value": "string",
+      "dataTypeFullName": "string"
+    }
+  ],
+  "tenantThreadId": "string",
+  "logMessageId": "string",
+  "logMessageUtcDate": "2024-04-22T12:07:09.547Z"
+}
+```
+
+## Heartbeat Json Contract
+
+Below is the actual contract for the heartbeat object in json
+
+```json
+{
+  "applicationName": "string",
+  "additionalInformation": "string",
+  "applicationId": "string",
+  "tenantIds": [ "string" ],
+  "versionVPBase": 0,
+  "applicationType": 0,
+  "friendlyAppName": "string",
+  "secretVPMonitorPassword": "string",
+  "identifier": "string",
+  "hearbeatMessageDate": "2024-04-22T12:09:00.329Z",
+  "intervalInSeconds": 0,
+  "hearbeatMessageUtcDate": "2024-04-22T12:09:00.329Z",
+  "hearbeatId": "string"
+}
+```
