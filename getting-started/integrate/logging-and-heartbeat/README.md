@@ -234,6 +234,6 @@ Below you will find all the fields in the contact, specifying what type they are
 | secretVPMonitorPassword | string              | No            | Api Key                   |  "secretKey1234"                                                   | Base    |
 | identifier              | string              | No            | Identifier                |  "CommandQueueTask"                                                | Extra   |
 | hearbeatMessageDate     | datetime            | Yes           | Client Local Date Time    |  "2024-04-22T12:09:00.329Z"                                        | Base    |
-| intervalInSeconds       | integer             | (Yes)         | Freq. of hearbeats in sec |  "120", 0 = Not definied                                           | Extra   |
+| intervalInSeconds       | integer             | (Yes)         | Freq. of hearbeats in sec |  120, 0 = Not definied                                             | Extra   |
 | hearbeatMessageUtcDate  | datetime            | Yes           | Client Utc Date Time      |  "2024-04-22T12:09:00.329Z"                                        | Base    |
-| hearbeatId              | string              | By Server     | Created Server Id         |  1024                                                              | Base    |
+| hearbeatId              | string              | By Server     | Created Server Id         |  "1024"                                                            | Base    |
