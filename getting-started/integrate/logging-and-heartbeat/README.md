@@ -231,6 +231,7 @@ Below you will find all the fields in the contact, specifying what type they are
 | versionVPBase           | integer             | (Yes)         | Version of VPBase         |  0 = None, 3 = Version 3, 4 = Version 4, 5 = Version 5             | Base    |
 | applicationType         | integer             | (Yes)         | Application Type          |  0 = Undefined, 1 = Web, 2 = Mobile, 3 = Printer, 4 = PalletScale  | Base    |
 | friendlyAppName         | string              | Yes           | Friendly Name             |  "ExampleClient"                                                   | Base    |
+| secretVPMonitorPassword | string              | No            | Api Key                   |  "secretKey1234"                                                   | Base    |
 | identifier              | string              | No            | Identifier                |  "CommandQueueTask"                                                | Extra   |
 | hearbeatMessageDate     | datetime            | Yes           | Client Local Date Time    |  "2024-04-22T12:09:00.329Z"                                        | Base    |
 | intervalInSeconds       | integer             | (Yes)         | Freq. of hearbeats in sec |  "120", 0 = Not definied                                           | Extra   |
