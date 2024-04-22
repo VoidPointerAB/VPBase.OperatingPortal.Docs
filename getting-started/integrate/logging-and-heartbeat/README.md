@@ -1,11 +1,15 @@
 # Integrate with the portal using logging and heartbeats
 Below is information on how connecting an client application to submit log data and heart beats to the portal.
 
-## Swagger
+## Swagger and Code Gen
 
 Check out the link below for the swagger definition, json-file.
 
 [swagger.json](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/swagger.json)
+
+If you don't find any sample code or similar below, you can create your own rest-client stub using the code generator below: 
+
+[Swagger Code Gen](https://swagger.io/tools/swagger-codegen/)
 
 ## Is your application written in .NET?
 Then the job is very easy for you. 
@@ -21,7 +25,12 @@ The operations and sample api app then uses a rest api to receive the logging an
 The application now saves the result in a static list for the logging itself and the same for the heart beats. You can access these lists via the api.
 You can also trigger the logging and heartbeat using the api if you want to do this instead of coding.
 
-### Nuget packages
+#### Log4Net - Log Appender
+
+In the example and so we ourselves log in our platform, we use log4net as a log appender to send the data to operations. 
+In .NET Core this is just an extension to the regular logging.
+
+#### Nuget packages
 The example uses two nuget packages that do most of the work.
 
 - VPBase.ACC
@@ -41,9 +50,7 @@ The code for this can be found in the public git repo:
 
 [VPBase.Client](https://github.com/VoidPointerAB/VPBase.Client)
 
-
-
-
+Here you will find the code for the rest log appender itself, which is used to communicate with operations.
 
 ## Logging
 
