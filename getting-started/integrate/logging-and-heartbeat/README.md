@@ -212,6 +212,11 @@ Below you will find all the fields in the contact, specifying what type they are
 | level                   | string              | Yes           | Log Level                 |  "DEBUG", "INFO", "WARN", "ERROR", "FATAL"                         | Base    |
 | loggerName              | string              | Yes           | Logger Name               |  "Example.Logger"                                                  | Base    |
 | message                 | string              | Yes           | Message                   |  "Example log information"                                         | Base    |
+| exceptionString         | string              | No            | Exception String          |  "System.Exception: AuthRole not found"                            | Base    |
+| exceptionSource         | string              | No            | Exception Source          |  "ExampleClient.Base.Core"                                         | Base    |
+| exceptionNumber         | integer             | (Yes)         | Exception Error Number    |  2345                                                              | Base    |
+| customerMessage         | string              | No            | Message by customer       |  "Extra message by the customer"                                   | Base    |
+| secretVPMonitorPassword | string              | No            | Api Key                   |  "secretKey1234"                                                   | Base    |
 
 ## Heartbeat Json Contract
 
