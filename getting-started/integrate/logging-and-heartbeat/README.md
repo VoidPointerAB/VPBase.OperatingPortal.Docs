@@ -235,7 +235,7 @@ Below you will find all the fields in the contact, specifying what type they are
 | :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
 | entityId                | string              | No            | Entity Identifier         |  "99999"                                                           | Extra   |
 | entityValueName         | string              | No            | Entity Value              |  "Base Customer AB"                                                | Extra   |
-| entityType              | integer             | (Yes)         | Entity Type               |  2 = Customer                                                      | Extra   |
+| entityType              | integer             | (Yes)         | Entity Type               |  0 = None, 1 = Vendor, 2 = Customer, 3 = Partner (Higher Custom)   | Extra   |
 | entityTypeName          | string              | No            | Entity Type Name          |  "Customer"                                                        | Extra   |
 
 ### Object "Url" fields
