@@ -198,6 +198,21 @@ Below is the actual contract for the logging object in json
 }
 ```
 
+Below you will find all the fields in the contact, specifying what type they are and whether it is mandatory or not, description, example and version
+
+| Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
+| :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
+| applicationName         | string              | Yes           | Name of the Application   |  "Example.Development.Client"                                      | Base    |
+| additionalInformation   | string              | No            | Extra Message / Data      |  "Extra log information"                                           | Base    |        
+| applicationId           | string              | Yes           | Installation Id           |  "TEST_ExampleClient_Application_Development"                      | Base    |
+| tenantIds               | list of strings     | Yes           | Organisation identifiers  |  "TEST_VPBase_Tenant_TestCompany"                                  | Base    |
+| versionVPBase           | integer             | (Yes)         | Version of VPBase         |  0 = None, 3 = Version 3, 4 = Version 4, 5 = Version 5             | Base    |
+| applicationType         | integer             | (Yes)         | Application Type          |  0 = Undefined, 1 = Web, 2 = Mobile, 3 = Printer, 4 = PalletScale  | Base    |
+| friendlyAppName         | string              | Yes           | Friendly Name             |  "ExampleClient"                                                   | Base    |
+| level                   | string              | Yes           | Log Level                 |  "DEBUG", "INFO", "WARN", "ERROR", "FATAL"                         | Base    |
+| loggerName              | string              | Yes           | Logger Name               |  "Example.Logger"                                                  | Base    |
+| message                 | string              | Yes           | Message                   |  "Example log information"                                         | Base    |
+
 ## Heartbeat Json Contract
 
 Below is the actual contract for the heartbeat object in json
@@ -225,7 +240,7 @@ Below you will find all the fields in the contact, specifying what type they are
 | Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
 | :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
 | applicationName         | string              | Yes           | Name of the Application   |  "Example.Development.Client"                                      | Base    |
-| additionalInformation   | string              | Yes           | Message / Data            |  "CommandQueueTask has finished its execution!"                    | Base    |        
+| additionalInformation   | string              | Yes           | Message / Data            |  "Startup Heartbeat Thread!"                                       | Base    |        
 | applicationId           | string              | Yes           | Installation Id           |  "TEST_ExampleClient_Application_Development"                      | Base    |
 | tenantIds               | list of strings     | Yes           | Organisation identifiers  |  "TEST_VPBase_Tenant_TestCompany"                                  | Base    |
 | versionVPBase           | integer             | (Yes)         | Version of VPBase         |  0 = None, 3 = Version 3, 4 = Version 4, 5 = Version 5             | Base    |
