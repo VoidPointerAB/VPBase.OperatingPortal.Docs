@@ -27,6 +27,8 @@ The example uses two nuget packages that do most of the work.
 - VPBase.ACC
 - VPBase.Client
 
+![Packages](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/logging-and-heartbeat/nuget_packages.png)
+
 **VPBase.ACC**
 
 VPBase.ACC or the "ACC" is an assembly that is general to use and through all versions of our platforms in VPBase, between client and server, between our various modules and applications, 
