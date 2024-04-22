@@ -59,9 +59,13 @@ So it's extremely easy to get started.
 
 ![Apply Setting and Log4net](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/logging-and-heartbeat/apply_settings_and_log4net.png)
 
+[Program.cs in example](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/example-code/client-and-api/OperatingPortal.NetCore.WebExampleApi/Program.cs)
+
 Then also what settings the log4net appender has, this through log4net.config. 
 
 ![log4net.config](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/getting-started/integrate/logging-and-heartbeat/log4net_config.png)
+
+[log4net.config in example](https://github.com/VoidPointerAB/VPBase.OperatingPortal.Docs/blob/master/example-code/client-and-api/OperatingPortal.NetCore.WebExampleApi/log4net.config)
 
 But it should be able to be set programatically.
 Here you can see the assembly path to the appender client itself.
