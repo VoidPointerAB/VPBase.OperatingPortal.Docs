@@ -217,6 +217,17 @@ Below you will find all the fields in the contact, specifying what type they are
 | exceptionNumber         | integer             | (Yes)         | Exception Error Number    |  2345                                                              | Base    |
 | customerMessage         | string              | No            | Message by customer       |  "Extra message by the customer"                                   | Base    |
 | secretVPMonitorPassword | string              | No            | Api Key                   |  "secretKey1234"                                                   | Base    |
+| logMessageDate          | datetime            | Yes           | Client Local Date Time    |  "2024-04-22T12:07:09.547Z"                                        | Base    |
+| tenantThreadId          | string              | No            | Thread identifier         |  "ThreadIdentifier", NULL                                          | Base    |
+| logMessageUtcDate       | datetime            | No            | Client Local Utc DateTime |  "2024-04-22T12:07:09.547Z"                                        | Base    |
+| logMessageId            | string              | By Server     | Created Server Id         |  "8765"                                                            | Base    |
+
+### Object "User" fields
+
+| Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
+| :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
+| userId                  | string              | No            | User Identifier           |  "User0001"                                                        | Base    |
+| userName                | string              | No            | User Name                 |  "myusername" (will be erased as everything after cleanup period)  | Base    | 
 
 ## Heartbeat Json Contract
 
@@ -255,5 +266,5 @@ Below you will find all the fields in the contact, specifying what type they are
 | identifier              | string              | No            | Identifier                |  "CommandQueueTask"                                                | Extra   |
 | hearbeatMessageDate     | datetime            | Yes           | Client Local Date Time    |  "2024-04-22T12:09:00.329Z"                                        | Base    |
 | intervalInSeconds       | integer             | (Yes)         | Freq. of hearbeats in sec |  120, 0 = Not definied                                             | Extra   |
-| hearbeatMessageUtcDate  | datetime            | Yes           | Client Utc Date Time      |  "2024-04-22T12:09:00.329Z"                                        | Base    |
+| hearbeatMessageUtcDate  | datetime            | Yes           | Client Local Utc DateTime |  "2024-04-22T12:09:00.329Z"                                        | Base    |
 | hearbeatId              | string              | By Server     | Created Server Id         |  "1024"                                                            | Base    |
