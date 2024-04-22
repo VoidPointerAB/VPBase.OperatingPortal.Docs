@@ -21,19 +21,25 @@ The operations and sample api app then uses a rest api to receive the logging an
 The application now saves the result in a static list for the logging itself and the same for the heart beats. You can access these lists via the api.
 You can also trigger the logging and heartbeat using the api if you want to do this instead of coding.
 
-
-
-
-
-
 ### Nuget packages
-The example uses two nuggets that do most of the work.
+The example uses two nuget packages that do most of the work.
 
 - VPBase.ACC
 - VPBase.Client
 
+**VPBase.ACC**
 
-where the contract between server and client is already defined.
+VPBase.ACC or the "ACC" is an assembly that is general to use and through all versions of our platforms in VPBase, between client and server, between our various modules and applications, 
+and in this case operations that contain the contracts for logging and heartbeat etc.
+This is to get clean C# classes that avoid dynamic objects + code for communication and lots of other things.
+
+**VBase.Client**
+VBase.Client is an assembly that contains the actual rest-appender in log4net etc.
+The code for this can be found in the public git repo:
+
+[VPBase.Client](https://github.com/VoidPointerAB/VPBase.Client)
+
+
 
 
 
