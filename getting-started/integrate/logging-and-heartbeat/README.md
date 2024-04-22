@@ -1,4 +1,4 @@
-# Integrate with the portal using logging and heartbeats
+# Integrate with VPBase Application Operations using Logging and Heartbeats
 Below is information on how connecting an client application to submit log data and heart beats to the portal.
 
 ## Swagger and Code Gen
@@ -69,6 +69,77 @@ Then also what settings the log4net appender has, this through log4net.config.
 
 But it should be able to be set programatically.
 Here you can see the assembly path to the appender client itself.
+
+#### Easy Logging Example in .NET Core (use normal logging)
+
+Just use normal logging in .NET Core
+
+```c#
+// Simple logging with INFO level
+app.Logger.LogInformation("Example log information");
+
+```
+For more info, follow link below, Learn Microsoft.
+
+[Logging in .NET Core and ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-8.0)
+
+#### Easy Heartbeat Example in .NET Core
+
+```c#
+// Heartbeat example
+HeartbeatClient.DefaultClient.Heartbeat("Startup Heartbeat Thread!");
+
+```
+
+#### Advanced Logging Example - Use scoped logging
+
+Below is an example of scoped logging found in the example where you use full logging and can basically log anything.
+To make it easier to use the same concepts in client and server, we have predefined certain properties so that these are the same between different applications.
+
+Example is the UserId or the UserName.
+
+The example below at the end of the scope, shows how to log custom properties with custom keys and also logging a fully serialized object in json string format.
+
+```c#
+var obj = new LogStartupExample() { Name = "Base Test Class Json Example" };
+var authJsonConverter = new AuthContractJsonConverter();
+var jsonData = authJsonConverter.SerializeObject(obj);
+
+// Scope logging example
+var dictionary = new Dictionary<string, object>()
+{
+    { LoggingKeyDefinitions.UserId, "baseUserId" },
+    { LoggingKeyDefinitions.UserName, "baseUserName" },
+
+    { LoggingKeyDefinitions.EntityId, "99999" },
+    { LoggingKeyDefinitions.EntityType, (int)LoggingMessageEntityType.Customer },
+    { LoggingKeyDefinitions.EntityTypeName, LoggingMessageEntityType.Customer.ToString() },
+    { LoggingKeyDefinitions.EntityValueName, "Base Customer AB" },
+
+    { LoggingKeyDefinitions.EntityId2, "88888" },
+    { LoggingKeyDefinitions.EntityType2, (int)LoggingMessageEntityType.Vendor },
+    { LoggingKeyDefinitions.EntityTypeName2, LoggingMessageEntityType.Vendor.ToString() },
+    { LoggingKeyDefinitions.EntityValueName2, "Base Vendor AB" },
+
+    { LoggingKeyDefinitions.AbsoluteUri, "https://voidpointer.se/admin" },
+    { LoggingKeyDefinitions.RawUrl, "admin" },
+
+    { LoggingKeyDefinitions.AdditionalInformation, "base additional info" },
+
+    { "CustomStringKey", "baseValue" },
+    { "CustomIntKey", 33 },
+    { "CustomDateTimeKey", new DateTime(2023, 4, 28) },
+    { "CustomBoolKey", true },
+    { "CustomDecimalKey", 2.3m },
+    { "CustomJsonKey", jsonData }
+};
+
+using (logger.BeginScope(dictionary))
+{
+    logger.LogInformation("Test logging from base server startup!");
+}
+
+```
 
 ## Logging
 
