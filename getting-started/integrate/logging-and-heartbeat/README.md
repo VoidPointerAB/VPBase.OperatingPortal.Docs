@@ -218,7 +218,7 @@ Below you will find all the fields in the contact, specifying what type they are
 | customerMessage         | string              | No            | Message by customer       |  "Extra message by the customer"                                   | Base    |
 | secretVPMonitorPassword | string              | No            | Api Key                   |  "secretKey1234"                                                   | Base    |
 | logMessageDate          | datetime            | Yes           | Client Local Date Time    |  "2024-04-22T12:07:09.547Z"                                        | Base    |
-| tenantThreadId          | string              | No            | Thread identifier         |  "ThreadIdentifier", NULL                                          | Base    |
+| tenantThreadId          | string              | No            | Thread identifier         |  "ThreadIdentifier", NULL                                          | Extra   |
 | logMessageUtcDate       | datetime            | No            | Client Local Utc DateTime |  "2024-04-22T12:07:09.547Z"                                        | Base    |
 | logMessageId            | string              | By Server     | Created Server Id         |  "8765"                                                            | Base    |
 
@@ -226,8 +226,32 @@ Below you will find all the fields in the contact, specifying what type they are
 
 | Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
 | :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
-| userId                  | string              | No            | User Identifier           |  "User0001"                                                        | Base    |
-| userName                | string              | No            | User Name                 |  "myusername" (will be erased as everything after cleanup period)  | Base    | 
+| userId                  | string              | No            | User Identifier           |  "baseUserId"                                                      | Extra   |
+| userName                | string              | No            | User Name                 |  "baseUserName" (will be erased as everything after clean-period)  | Extra   | 
+
+### Object "Entity" fields (2 objects with same definition)
+
+| Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
+| :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
+| entityId                | string              | No            | Entity Identifier         |  "99999"                                                           | Extra   |
+| entityValueName         | string              | No            | Entity Value              |  "Base Customer AB"                                                | Extra   |
+| entityType              | integer             | (Yes)         | Entity Type               |  2 = Customer                                                      | Extra   |
+| entityTypeName          | string              | No            | Entity Type Name          |  "Customer"                                                        | Extra   |
+
+### Object "Url" fields
+
+| Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
+| :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
+| rawUrl                  | string              | No            | Raw url                   |  "admin"                                                           | Extra   |
+| absoluteUri             | string              | No            | Absolute Uri              |  "https://voidpointer.se/admin"                                    | Extra   | 
+
+### Object "Keyvalues" fields (Custom Fields)
+
+| Field                   | Type                | Mandatory     | Description               |  Example                                                           | Version |
+| :---                    | :----:              | :----:        | :---                      |  :---                                                              | :----:  |
+| key                     | string              | No            | Custom Key Id             |  "CustomStringKey"                                                 | Extra   |
+| value                   | string              | No            | Custom Value              |  "baseValue"                                                       | Extra   | 
+| dataTypeFullName        | string              | No            | Custom Value              |  "System.String", "System.DateTime", "System.Decimal", "System.Boolean", "System.Int32"  (Json is System.String)            | Extra   | 
 
 ## Heartbeat Json Contract
 
