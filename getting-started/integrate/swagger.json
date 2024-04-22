@@ -1,0 +1,467 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "VPBase5 OperatingPortal API",
+    "description": "VPBase5 OperatingPortal ASP.NET Core Web API",
+    "contact": {
+      "name": "VPBase Contact",
+      "url": "https://vpbase.com/kontakt",
+      "email": "kontakt@voidpointer.se"
+    },
+    "version": "operatingportal"
+  },
+  "paths": {
+    "/monitoring/LogMessage": {
+      "put": {
+        "tags": [
+          "LoggingApi"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LogMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/LogMessage"
+            }
+          }
+        }
+      }
+    },
+    "/monitoring/LogMessages": {
+      "put": {
+        "tags": [
+          "LoggingApi"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LogMessageList"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/LogMessageList"
+            }
+          }
+        }
+      }
+    },
+    "/monitoring/HeartbeatMessage": {
+      "put": {
+        "tags": [
+          "LoggingApi"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/HeartbeatMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/HeartbeatMessage"
+            }
+          }
+        }
+      }
+    },
+    "/monitoring/TestOperatingPortal": {
+      "get": {
+        "tags": [
+          "LoggingApi"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/maintenance/GetWindows": {
+      "get": {
+        "tags": [
+          "MaintenanceApi"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "quantity",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "secretMaintenancePassword",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MaintenanceWindowListModel"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maintenance/TestOperatingPortal": {
+      "get": {
+        "tags": [
+          "MaintenanceApi"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "HeartbeatMessage": {
+      "type": "object",
+      "properties": {
+        "applicationName": {
+          "type": "string"
+        },
+        "additionalInformation": {
+          "type": "string"
+        },
+        "applicationId": {
+          "type": "string"
+        },
+        "tenantIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "versionVPBase": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "applicationType": {
+          "$ref": "#/definitions/SystemApplicationType"
+        },
+        "friendlyAppName": {
+          "type": "string"
+        },
+        "secretVPMonitorPassword": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "hearbeatMessageDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "intervalInSeconds": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "hearbeatMessageUtcDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "hearbeatId": {
+          "type": "string"
+        }
+      }
+    },
+    "LogMessage": {
+      "type": "object",
+      "properties": {
+        "applicationName": {
+          "type": "string"
+        },
+        "additionalInformation": {
+          "type": "string"
+        },
+        "applicationId": {
+          "type": "string"
+        },
+        "tenantIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "versionVPBase": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "applicationType": {
+          "$ref": "#/definitions/SystemApplicationType"
+        },
+        "friendlyAppName": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "loggerName": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "exceptionString": {
+          "type": "string"
+        },
+        "exceptionSource": {
+          "type": "string"
+        },
+        "exceptionNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "customerMessage": {
+          "type": "string"
+        },
+        "secretVPMonitorPassword": {
+          "type": "string"
+        },
+        "logMessageDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/LoggingUser"
+        },
+        "entity": {
+          "$ref": "#/definitions/LoggingEntity"
+        },
+        "entity2": {
+          "$ref": "#/definitions/LoggingEntity"
+        },
+        "url": {
+          "$ref": "#/definitions/LoggingUrl"
+        },
+        "keyValues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoggingKeyValue"
+          }
+        },
+        "tenantThreadId": {
+          "type": "string"
+        },
+        "logMessageId": {
+          "type": "string"
+        },
+        "logMessageUtcDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "LogMessageList": {
+      "type": "object",
+      "properties": {
+        "logListId": {
+          "type": "string"
+        },
+        "logMessages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LogMessage"
+          }
+        }
+      }
+    },
+    "LoggingEntity": {
+      "type": "object",
+      "properties": {
+        "entityId": {
+          "type": "string"
+        },
+        "entityValueName": {
+          "type": "string"
+        },
+        "entityType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "entityTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "LoggingKeyValue": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": { },
+        "dataTypeFullName": {
+          "type": "string"
+        }
+      }
+    },
+    "LoggingUrl": {
+      "type": "object",
+      "properties": {
+        "rawUrl": {
+          "type": "string"
+        },
+        "absoluteUri": {
+          "type": "string"
+        }
+      }
+    },
+    "LoggingUser": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        }
+      }
+    },
+    "MaintenanceWindowListModel": {
+      "type": "object",
+      "properties": {
+        "maintenanceWindowId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startDateUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDateUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "affectedApplicationNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fullDescription": {
+          "type": "string"
+        }
+      }
+    },
+    "SystemApplicationType": {
+      "format": "int32",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "type": "integer"
+    }
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic",
+      "description": "Basic Authorization header using the Bearer scheme."
+    }
+  },
+  "security": [
+    {
+      "basic": [ ]
+    }
+  ]
+}
